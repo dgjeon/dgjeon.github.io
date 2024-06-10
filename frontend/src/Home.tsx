@@ -7,7 +7,7 @@ import Notice from './components/SectionNotice'
 import Netflix from './components/SectionNetflix'
 import Picture from './components/SectionPicture'
 import Portrait from './components/SectionPortrait'
-import Fmaily from './components/SectionFamily'
+import Family from './components/SectionFamily'
 import DDay from './components/SectionDDay'
 import DDayComponent from './components/SectionDDayComponent'
 import Gallery from './components/SectionGallery'
@@ -59,7 +59,7 @@ function Home() {
                 <Notice openAttendForm={openAttendForm}/>
                 <Netflix moveCalendar={moveCalendar}/>    
                 <Picture />
-                <Fmaily />
+                <Family />
                 <Portrait />
                 <DDay ref={ddayComponentRef} />
                 <DDayComponent />

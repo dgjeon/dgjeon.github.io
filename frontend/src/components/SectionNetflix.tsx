@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import VideoPlayer from './VideoPlayer'
@@ -9,6 +9,7 @@ import nameImg from '../assets/seahee/name-img.png'
 import ageImg from '../assets/seahee/age-img.png'
 import hdImg from '../assets/seahee/hd-img.png'
 import playBtn from '../assets/seahee/play-btn.png'
+import pauseBtn from '../assets/seahee/pause-btn.png'
 import infoBtn from '../assets/seahee/info-icon.png'
 
 interface SectionNetflixType {
@@ -17,21 +18,32 @@ interface SectionNetflixType {
 
 const SectionNetflix = (props: SectionNetflixType) => {
   const [playing, setPlaying] = useState(false)
+  const [muted, setMuted] = useState(true)
 
   const setReady = () => {
     setPlaying(true)
   }
+  
+  const unmute = () => {
+    setMuted(false)
+  }
+  
+  useEffect(() => {
+    if (playing) {
+      unmute();
+    }
+  })
 
   return (
     <>
-      <NetflixMain id="main" className="w-full flex flex-col text-white bg-black">
-        <div className="netflix text-black">
-            <VideoPlayer playing={playing} setPlaying={setPlaying} setReady={setReady}></VideoPlayer>
-          {/* <div className="video-box">
-            <button className="video-play-btn">
-              <img src={videoIcon} alt="재생" />
-            </button>
-          </div> */}
+      <NetflixMain id="main" className="w-full flex flex-col text-white bg-black justify-center items-center">
+        <div className="netflix text-black w-full">
+            <VideoPlayer
+              playing={playing}
+              muted={muted}
+              setPlaying={setPlaying}
+              setReady={setReady}
+            ></VideoPlayer>
           <div className="container">
             <div className="title">
               <div className="logo">
@@ -57,8 +69,10 @@ const SectionNetflix = (props: SectionNetflixType) => {
 
             <div className="btn-box">
               <button className="play-btn" onClick={() => setPlaying(!playing)}>
-                <img src={playBtn} alt="" /> { playing ? '일시정지' : '재생' }
+                { playing && <div className="flex flex-1 justify-center items-center gap-[15px] text-black"><img src={pauseBtn} alt="" /><span className="!text-black">일시정지</span></div>}
+                { !playing && <div className="flex flex-1 justify-center items-center gap-[15px] text-black"><img src={playBtn} alt="" /><span className="!text-black">재생</span></div>}
               </button>
+              <button onClick={unmute} style={{ display: 'none' }}>음소거 해제</button>
               <button className="info-btn" onClick={props.moveCalendar}>
                 <img src={infoBtn} alt="" />예식정보
               </button>

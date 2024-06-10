@@ -7,18 +7,18 @@ import 'swiper/swiper-bundle.css'
 
 import { SwiperButtonPrev, SwiperButtonNext } from '../hooks/useSwiper';
 
-import img_1 from '../assets/img/_240324_0111.jpg'
-import img_2 from '../assets/img/_240324_0190.jpg'
-import img_3 from '../assets/img/_240324_0398.jpg'
-import img_4 from '../assets/img/_240324_0441.jpg'
-import img_5 from '../assets/img/_240324_0508.jpg'
-import img_6 from '../assets/img/_240324_0528.jpg'
-import img_7 from '../assets/img/_240324_0608.jpg'
-import img_8 from '../assets/img/_240324_0635.jpg'
-import img_9 from '../assets/img/_240324_0729.jpg'
-import img_10 from '../assets/img/_240324_0938.jpg'
-import img_11 from '../assets/img/_240324_0967.jpg'
-import img_12 from '../assets/img/_240324_1000.jpg'
+import img_1 from '../assets/img/c1.jpg'
+import img_2 from '../assets/img/c2.jpg'
+import img_3 from '../assets/img/c3.jpg'
+import img_4 from '../assets/img/c4.jpg'
+import img_5 from '../assets/img/c12.jpg'
+import img_6 from '../assets/img/c5.jpg'
+import img_7 from '../assets/img/c6.jpg'
+import img_8 from '../assets/img/c7.jpg'
+import img_9 from '../assets/img/c13.jpg'
+import img_10 from '../assets/img/c8.jpg'
+import img_11 from '../assets/img/c9.jpg'
+import img_12 from '../assets/img/c10.jpg'
 import img_13 from '../assets/img/KKK_0061.jpg'
 import img_14 from '../assets/img/KKK_0176.jpg'
 import img_15 from '../assets/img/KKK_0242.jpg'
@@ -26,6 +26,7 @@ import img_16 from '../assets/img/KKK_0371.jpg'
 import img_17 from '../assets/img/KKK_0416.jpg'
 import img_18 from '../assets/img/KKK_0539.jpg'
 import img_19 from '../assets/img/KKK_0573.jpg'
+import img_20 from '../assets/img/c11.jpg'
 
 const Carousel = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore | null>(null)
@@ -50,6 +51,7 @@ const Carousel = () => {
     img_17,
     img_18,
     img_19,
+    img_20
   ]
 
   const imageRender = imgs.map((item, index) => {

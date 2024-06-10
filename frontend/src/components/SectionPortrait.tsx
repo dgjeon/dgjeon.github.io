@@ -1,12 +1,12 @@
-import solo1 from '../assets/img/_240324_0729.jpg'
-import solo2 from '../assets/img/_240324_0508.jpg'
+import solo1 from '../assets/img/solo1.png'
+import solo2 from '../assets/img/solo2.png'
 
 const Portrait = () => {
   return (
     <>
       <section
         id="editor-section-portrait"
-        className="base-section relative bgbase px-16 select-none large MapoFlowerIsland style4 !pb-16"
+        className="w-full flex flex-1 justify-center items-center base-section relative bgbase px-16 select-none large MapoFlowerIsland style4 !pb-16"
         style={{ paddingBottom: "4rem", transform: "scale(1)", zIndex: 6 }}
       >
         <div data-aos="section-portrait-area-1 fade-up" className="flex items-center aos-init aos-animate">

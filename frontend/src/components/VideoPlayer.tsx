@@ -5,6 +5,7 @@ import video from '../assets/bgm/video.mp4'
 
 interface VideoPlayerType {
   playing: boolean
+  muted: boolean
   setPlaying: (isPlay: boolean) => void
   setReady: () => void
 }
@@ -15,7 +16,7 @@ const VideoPlayer = (props: VideoPlayerType) => {
   }
 
   const handleReady = () => {
-    props.setReady();
+    props.setReady()
   }
 
   return (
@@ -28,14 +29,15 @@ const VideoPlayer = (props: VideoPlayerType) => {
           controls={true} // 유튜브 재생 컨트롤바 노출 여부
           onEnded={onEnded} // 현재 재생 중인 영상 종료 시 호출
           onReady={handleReady}
+          volume={1}
           style={{ width: "100%", height: "auto" }}
-          muted={true}
+          muted={props.muted}
           loop={true}
-	  config={{
-	    file: {
-	      attributes: { playsInline: true }
-	    }
-	  }}
+          config={{
+            file: {
+              attributes: { playsInline: true }
+            }
+          }}
         />
       </VideoPlayerWrap>
     </>

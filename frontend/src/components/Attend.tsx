@@ -247,26 +247,26 @@ const Attend = (props: AttendType) => {
               </RadioWrap>
             </div>
           </div>
+          <div className="flex items-center mb-2">
+            <div className="w-1/4">
+              <label className="block text-gray-500 font-bold mb-1 text-center leading-[28px]">
+                성함<span className="text-red-400">*</span>
+              </label>
+            </div>
+            <div className="w-3/4">
+              <input
+                className="placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-1 pl-1 pr-1 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm w-[95%] ml-[4%]"
+                placeholder="(필수) 참석자 성함을 입력해주세요."
+                type="text"
+                name="name"
+                value={name}
+                onInput={handleChangeName}
+              />
+            </div>
+          </div>
           {
             attend === 'ok' &&
             <>
-              <div className="flex items-center mb-2">
-                <div className="w-1/4">
-                  <label className="block text-gray-500 font-bold mb-1 text-center leading-[28px]">
-                    성함<span className="text-red-400">*</span>
-                  </label>
-                </div>
-                <div className="w-3/4">
-                  <input
-                    className="placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-1 pl-1 pr-1 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm w-[95%] ml-[4%]"
-                    placeholder="(필수) 참석자 성함을 입력해주세요."
-                    type="text"
-                    name="name"
-                    value={name}
-                    onInput={handleChangeName}
-                  />
-                </div>
-              </div>
               <div className="flex items-center mb-2">
                 <div className="w-1/4">
                   <label className="block text-gray-500 font-bold mb-1 text-center leading-[28px]">

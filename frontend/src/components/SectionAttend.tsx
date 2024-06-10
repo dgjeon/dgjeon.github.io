@@ -9,11 +9,7 @@ import Attend from './Attend'
 
 const SectionAttend = forwardRef((props, ref) => {
   interface form {
-    type: string,
-    attend: string,
-    name: string,
-    person: string,
-    eat: string
+    [key: string]: any
   }
 
   interface Token {
@@ -23,7 +19,7 @@ const SectionAttend = forwardRef((props, ref) => {
 
   const { isOpen, toggle } = useModal()
   
-  const [info, setInfo] = useState<form | {}>({
+  const [info, setInfo] = useState<form>({
     type: 'groom',
     attend: 'ok',
     name: '',
@@ -33,14 +29,13 @@ const SectionAttend = forwardRef((props, ref) => {
 
   const [restAPIKey] = useState(import.meta.env.VITE_APP_KAKAO_REST_API_KEY)
   const [token, setToken] = useState(import.meta.env.VITE_APP_KAKAO_ACCESS_TOKEN)
-  const [refreshToken] = useState(import.meta.env.PSjfHLr_NPJ97Gav3ZqjRELOQaPSLAf0AAAAAgo9c5sAAAGP_73QarfuZLkpz6yP)
+  const [refreshToken] = useState(import.meta.env.VITE_APP_KAKAO_REFRESH_TOKEN)
 
   const updateAttendInfo = (obj: object) => {
-    console.log(obj)
     setInfo(obj);
   }
 
-  const setAcessToken = async () => {
+  const setAcessToken = async (json: object) => {
     const data = {
       grant_type: 'refresh_token',
       client_id: restAPIKey,
@@ -52,9 +47,10 @@ const SectionAttend = forwardRef((props, ref) => {
     })
 
     setToken(res.data.access_token)
+    alertKakao(json, res.data.access_token)
   }
 
-  const alertKakao = async (json: object) => {
+  const alertKakao = async (json: object, token: string) => {
     await axios.post('https://kapi.kakao.com/v2/api/talk/memo/default/send',
       `template_object=${JSON.stringify(json)}`,
      {
@@ -66,20 +62,25 @@ const SectionAttend = forwardRef((props, ref) => {
       toast.success('참석 의사를 전달했습니다');
       toggle();
     }).catch(async e => {
-      await setAcessToken();
-      alertKakao(json);
+      setAcessToken(json);
     })
   }
 
   const submit = async () => {
     const isEmpty = Object.values(info).filter(val => val === '')
+    const isZero = info.person.split(', ').every((a: string) => a.indexOf('0') !== -1);
 
     if (isEmpty.length) {
       toast.error('필수 값이 비어있습니다.');
       return;
     }
 
-    const res = await axios.post('/api/attend', info);
+    if (isZero) {
+      toast.error('동행인원은 1명 이상이어야 합니다.');
+      return;
+    }
+    
+    const res = await axios.post(`${import.meta.env.VITE_APP_SERVER}/api/attend`, info);
 
     const text = Object.keys(info).reduce((prev, cur, index) => {
       const val = Object.values(info)[index]
@@ -112,7 +113,7 @@ const SectionAttend = forwardRef((props, ref) => {
       object_type: 'text',
       text,
       link: {
-        web_url: 'https://jseoun.pe.kr:3000/M9zJKICi16'
+        web_url: `${import.meta.env.VITE_APP_SERVER}/api/M9zJKICi16`
       },
       button_title: ''
     };
@@ -122,7 +123,7 @@ const SectionAttend = forwardRef((props, ref) => {
       return;
     }
 
-    alertKakao(json);
+    alertKakao(json, token);
   }
 
   useImperativeHandle(ref, () => ({

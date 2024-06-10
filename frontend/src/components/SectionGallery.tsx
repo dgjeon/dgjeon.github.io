@@ -5,7 +5,7 @@ const Gallery = () => {
     <>
       <section 
         id="editor-section-gallery"
-        className="base-section relative bgbase select-none large MapoFlowerIsland style4" 
+        className="max-w-screen-sm base-section relative bgbase select-none large MapoFlowerIsland style4" 
         style={{ transform: "scale(1)", zIndex: 9 }}
       >
         <div className="relative">

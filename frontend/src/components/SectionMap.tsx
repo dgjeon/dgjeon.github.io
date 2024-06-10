@@ -29,7 +29,7 @@ const SectionMap = () => {
     <>
       <section
         id="editor-section-map" 
-        className="base-section relative bgpoint1 w-full flex flex-col justify-center items-center select-none large MapoFlowerIsland style4 !pb-12"
+        className="w-full flex flex-1 justify-center items-center base-section relative bgpoint1 w-full flex flex-col justify-center items-center select-none large MapoFlowerIsland style4 !pb-12"
         style={{ paddingTop: "4rem", paddingBottom: "4rem", transform: "scale(1)", zIndex: 12 }}
         data-aos="fade-up"
       >
