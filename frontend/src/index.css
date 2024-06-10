@@ -1,0 +1,268 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light; */
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* 모바일 청첩장 추가 */
+
+body {
+  display: unset;
+}
+
+.id6-section3 {
+  /* font-size: 1.8rem; */
+  line-height: 2rem;
+  margin-right: 1.9rem;
+}
+.id6-section5 {
+  /* font-size: 1.8rem; */
+  line-height: 2rem;
+  margin-left: 1.9rem;
+}
+
+.break-keep {
+  word-break: keep-all;
+}
+
+.font-semibold {
+  font-family: "KimjungchulMyungjoBold";
+}
+
+.title {
+  font-family: "KimjungchulMyungjoBold";
+  font-size: 1.3rem;
+}
+
+#editor-section-paragraph  p {
+  line-height: 2rem;
+  --tw-border-opacity: 1;
+  border-bottom-width: 1px;
+  border-color: #f7f2f2;
+  border-color: rgba(247, 242, 242, var(--tw-border-opacity));
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.relationshiprightblank {
+  margin-right: 1rem;
+}
+.relationshipleftblank {
+  margin-left: 1rem;
+}
+
+.react-calendar {
+  border: unset;
+}
+.react-calendar button:enabled:hover {
+  cursor: default;
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #fff;
+}
+.react-calendar__tile--active {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #fff;
+  position: relative;
+}
+.react-calendar__tile--active::before {
+  background-color: rgba(218,177,182,1);
+  border-radius: 50px 50px 10px 10px;
+  content: "";
+  height: 32px;
+  left: 50%;
+  position: absolute;
+  top: 15%;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  width: 21px;
+  border: 0 solid #e5e5e5;
+  box-sizing: border-box;
+}
+.react-calendar__tile--active::after {
+  background-color: rgba(218,177,182,1);
+  border-radius: 50px 50px 10px 10px;
+  content: "";
+  height: 32px;
+  left: 10%;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  position: absolute;
+  top: 15%;
+  width: 21px;
+  border: 0 solid #e5e5e5;
+  box-sizing: border-box;
+}
+.react-calendar__tile--active abbr {
+  position: relative;
+  z-index: 100;
+  font-weight: bold;
+  font-family: "KimjungchulMyungjoBold";
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #fff;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #fff !important;
+  outline: none !important;
+}
+.react-calendar button:focus,
+.react-calendar button:focus-visible {
+  outline: none !important;
+}
+.react-calendar .react-calendar__month-view__weekdays__weekday--weekend abbr {
+  color: #d10000;
+}
+.react-calendar abbr {
+  text-decoration: none;
+}
+
+.countdown {
+  max-height: 6.5rem;
+  max-width: 5.8rem;
+  --tw-border-opacity: 1;
+  --tw-bg-opacity: 1;
+  background-color: rgba(250, 248, 248, var(--tw-bg-opacity));
+  border-color: rgba(242, 238, 238, var(--tw-border-opacity));
+}
+
+.section-wtc-area-3 p {
+  margin: 0.5rem 0;
+  letter-spacing: normal;
+}
+
+.modal-overlay {
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-box {
+  display: block;
+  background: white;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+input:checked + label {
+	border-color: black;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.accountbg1 {
+  --tw-border-opacity: 1;
+  --tw-bg-opacity: 1;
+  border-color: #f9f5f5;
+  border-color: #c2c2c2;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-bottom-left-radius: unset;
+  border-bottom-right-radius: unset;
+}
+
+.accountbg2 {
+  --tw-border-opacity: 1;
+  --tw-bg-opacity: 1;
+  border-color: #f9f5f5;
+  border-color: #c2c2c2;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-bottom-left-radius: unset;
+  border-bottom-right-radius: unset;
+  border: unset;
+}
+
+.kakao-copy-btn {
+  height: 2rem;
+  width: 3.5rem;
+}
+.kakao-copy-img {
+  height: 15px;
+  width: 45px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 30px;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: '';
+}
+/* 모바일 청첩장 추가 */
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */

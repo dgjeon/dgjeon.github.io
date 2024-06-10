@@ -1,0 +1,32 @@
+<html>
+  <head>
+  <title>list test</title>
+  </head>
+  <body>
+    <h2 style="display: flex; justify-content: center;">참석 명단(<%=total%>)</h2>
+    <h3 style="display: flex; justify-content: center;">(신랑 측: <%=groomCount%>, 신부 측: <%=brideCount%>)</h3>
+    <table bordercolor="black" style="border-collapse: collapse; width: 50%; margin: auto;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th style="border: 1px solid black; padding: 8px; text-align: center; font-weight: bold;">분류</th>
+          <th style="border: 1px solid black; padding: 8px; text-align: center; font-weight: bold;">참석 여부</th>
+          <th style="border: 1px solid black; padding: 8px; text-align: center; font-weight: bold;">식사 여부</th>
+          <th style="border: 1px solid black; padding: 8px; text-align: center; font-weight: bold;">이름</th>
+          <th style="border: 1px solid black; padding: 8px; text-align: center; font-weight: bold;">동행(본인 포함)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%for (let i = 0; i < list.length; i++) {%>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px; text-align: center;"><%=list[i].type%></td>
+          <td style="border: 1px solid black; padding: 8px; text-align: center;"><%=list[i].attend%></td>
+          <td style="border: 1px solid black; padding: 8px; text-align: center;"><%=list[i].eat%></td>
+          <td style="border: 1px solid black; padding: 8px; text-align: center;"><%=list[i].name%></td>
+          <td style="border: 1px solid black; padding: 8px; text-align: center;"><%=list[i].person%></td>
+        </tr>
+        <%}%>
+      </tbody>
+    </table>
+    
+  </body>
+</html>

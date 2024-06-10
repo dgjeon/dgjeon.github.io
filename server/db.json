@@ -1,0 +1,20 @@
+{
+  "attend": [
+    {
+      "type": "groom",
+      "attend": "ok",
+      "eat": "yes",
+      "name": "홍길동",
+      "person": "성인:1, 어린이:0, 유아:0",
+      "createDate": "2024-06-10 14:19:44"
+    },
+    {
+      "type": "bride",
+      "attend": "ok",
+      "eat": "yes",
+      "name": "임꺽정",
+      "person": "성인:1, 어린이:0, 유아:0",
+      "createDate": "2024-06-10 14:19:48"
+    }
+  ]
+}
